@@ -1,12 +1,7 @@
 /* A DTO is an object that defines how the data will be sent over the network. 
 We could determine the DTO schema by using TypeScript interfaces, or by simple classes */
 
-import {
-  IsEmail,
-  IsNotEmpty,
-  MaxLength,
-  MinLength,
-} from 'class-validator';
+import { IsEmail, IsNotEmpty, MaxLength, MinLength } from 'class-validator';
 
 export class CreateUserDto {
   @IsNotEmpty({

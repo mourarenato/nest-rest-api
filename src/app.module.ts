@@ -7,13 +7,13 @@ import * as path from 'path';
 
 @Module({
   imports: [
-      ConfigModule.load(path.resolve(__dirname, 'config', '**/!(*.d).{ts,js}')),
-      TypeOrmModule.forRootAsync({
-         useFactory: (config: ConfigService) => config.get('database'),
-         inject: [ConfigService]
-      }),
-      UsersModule,
-      AuthModule,
+    ConfigModule.load(path.resolve(__dirname, 'config', '**/!(*.d).{ts,js}')),
+    TypeOrmModule.forRootAsync({
+      useFactory: (config: ConfigService) => config.get('database'),
+      inject: [ConfigService],
+    }),
+    UsersModule,
+    AuthModule,
   ],
 })
 export class AppModule {}

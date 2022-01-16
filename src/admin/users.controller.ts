@@ -5,16 +5,17 @@ Decorators associate classes with required metadata and enable Nest to create a 
 */
 
 import {
-  Controller, 
-  Post, 
-  Body, 
-  ValidationPipe, 
-  UseGuards, 
+  Controller,
+  Post,
+  Body,
+  ValidationPipe,
+  UseGuards,
   Get,
-  Delete, 
-  Param, 
+  Delete,
+  Param,
   Patch,
-  ForbiddenException} from '@nestjs/common';
+  ForbiddenException,
+} from '@nestjs/common';
 import { CreateUserDto } from '../dtos/create-user.dto';
 import { UsersService } from './users.service';
 import { ReturnUserDto } from '../dtos/return-user.dto';
@@ -64,9 +65,8 @@ export class UsersController {
       throw new ForbiddenException(
         'You are not authorized to access this feature',
       );
-    } else {
-      return this.usersService.updateUser(updateUserDto, id);
     }
+    return this.usersService.updateUser(updateUserDto, id);
   }
 
   @Delete(':id')

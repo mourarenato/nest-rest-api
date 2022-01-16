@@ -10,31 +10,28 @@
 
 # Project information
 
-This project is Rest API for register of users. Here is used the Nest.js, Postgres database and Docker.
+This project is a Rest API for register of users. Here is used Nest.js, Postgres and Docker.
 
 
 # Installation
 
-Steps to run this project:
+Get started without Makefile:
 
 1. Copy `.env.example` to `.env` 
 2. Copy `docker-compose.yml.example` to `docker-compose.yml`
 3. Edit the `docker-compose.yml` with your Docker information
 4. Setup database settings inside `.env` file
-4. Run `docker-compose up --build` command
+5. Run `docker-compose up -d` command
+6. Run `docker exec -it nest-rest bash -c "npm start"` to start server
 
-## Running the app
+Get started with Makefile:
 
-```bash
-# up
-$ docker-commpose up -d
-
-# down
-$ docker-compose down
-
-# watch mode
-$ docker logs --timestamps nest-rest --follow
-```
+1. Run `make fileMode`
+2. Run `make files`
+3. Run `make install`
+4. Run `make up`
+5. Run `make migration`
+6. Run `make start`
 
 # Using the project
 
